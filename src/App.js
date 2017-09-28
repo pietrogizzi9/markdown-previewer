@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+
+class Displays extends React.Component{
+  constructor(props){
+    super(props);
+    this.state ={
+      text: '',
+    }
+  }
+
+  handleChange(e){
+    var new_text = e.target.value;
+    this.setState({
+      text: new_text,
+    })
+  }
+
+  render(){
+
+    return ( 
+      <div className='container'>
+        <textarea 
+          className='textarea'
+          onChange={this.handleChange.bind(this)}
+          cols='50'
+          rows='20'
+        ></textarea>
+        <h1 className='display'>{this.state.text}</h1>
+      </div>
+      );
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Displays/>
     );
   }
 }
