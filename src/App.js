@@ -20,8 +20,8 @@ class Displays extends React.Component{
   render(){
 
     return ( 
-      <div class='container'>
-        <h1 class='title'>Markdown previewer</h1>
+      <div className='container'>
+        <h1 className='title'>Markdown previewer</h1>
         <textarea 
           value={this.state.text}
           className='textarea'
