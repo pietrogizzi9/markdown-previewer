@@ -6,7 +6,7 @@ class Displays extends React.Component{
   constructor(props){
     super(props);
     this.state ={
-      text: '',
+      text: 'this is an h1\n=======\n\n# also this\n\nthis is an h2\n-----------\n \n ## this too\n\n### h3\n\n#### h4\n\n##### h5\n\n###### h6\n \na blank line is\ntwo enters.\n\n-------- \n\nText attributes *italic*, **bold**, \n`monospace`.\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears'
     }
   }
 
@@ -21,7 +21,9 @@ class Displays extends React.Component{
 
     return ( 
       <div class='container'>
+        <h1 class='title'>Markdown previewer</h1>
         <textarea 
+          value={this.state.text}
           className='textarea'
           onChange={this.handleChange.bind(this)}
           cols='50'
