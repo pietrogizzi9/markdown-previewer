@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import ReactMarkdown from 'react-markdown';
 
 class Displays extends React.Component{
   constructor(props){
@@ -20,14 +20,14 @@ class Displays extends React.Component{
   render(){
 
     return ( 
-      <div className='container'>
+      <div class='container'>
         <textarea 
           className='textarea'
           onChange={this.handleChange.bind(this)}
           cols='50'
           rows='20'
         ></textarea>
-        <h1 className='display'>{this.state.text}</h1>
+        <ReactMarkdown className='display' source={this.state.text}/>
       </div>
       );
   }
